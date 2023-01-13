@@ -1,22 +1,24 @@
 #ifndef __MANAGER_HPP__
 #define __MANAGER_HPP__
 
+#include <sql.h>
 #include <string>
 
 namespace hoa {
 class Manager{
-    Manager();
-    virtual ~Manager();
+    public:
+        Manager();
+        virtual ~Manager();
 
-    virtual void    connect         () = 0;
-    virtual void    disconnect      () = 0;
+        virtual SQLRETURN    connect        (std::string _connect_info) = 0;
+        virtual SQLRETURN    disconnect     () = 0;
     
-    std::string     get_error_msg   ()  const;
-    int             get_error_code  ()  const;
+        const char*     get_error_msg       ()  const;
+        int             get_error_code      ()  const;
     
     protected:
         int         m_db_error_code         ;
-        std::string m_db_error_msg          ;
+        char        m_db_error_msg[1024]    ;
         char        m_buff[1024]            ;
         bool        m_connected             ;
 };
