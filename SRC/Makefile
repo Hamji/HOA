@@ -13,8 +13,8 @@ CP = cp
 LIB_PATH = ../LIB 
 
 
-INCLUDE = /opt/homebrew/Cellar/unixodbc/2.3.11/include
-LIBOPTION = /opt/homebrew/Cellar/unixodbc/2.3.11/lib
+INCLUDE = #INSERT SQL INCLUDE PATH 
+LIBOPTION = #INSERT SQL INCLUDE PATH
 
 all: $(NAME)
 
