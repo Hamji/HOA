@@ -8,7 +8,6 @@ namespace hoa {
 class Manager{
     public:
         Manager();
-        virtual ~Manager();
 
         virtual SQLRETURN    connect        (std::string _connect_info) = 0;
         virtual SQLRETURN    disconnect     () = 0;

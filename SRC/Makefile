@@ -13,13 +13,12 @@ CP = cp
 LIB_PATH = ../LIB 
 
 
-INCLUDE = #INSERT SQL INCLUDE PATH 
-LIBOPTION = #INSERT SQL INCLUDE PATH
+INCLUDE = /opt/homebrew/Cellar/unixodbc/2.3.11/include 
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CC) $(CFLAGS) -I $(INCLUDE)  -c $(SRC) -std=c++20
+	g++ $(CFLAGS) -I $(INCLUDE) -lm  -c $(SRC) -std=c++20
 	$(AR) $(NAME) $(OBJECTS)
 
 clean:
